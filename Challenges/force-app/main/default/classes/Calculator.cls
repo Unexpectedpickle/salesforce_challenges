@@ -24,18 +24,30 @@ public class Calculator {
         if (b == 0 || a < b) {
             return 0;
         }
-        Integer counter = 0, sum = a;
-        while (sum > 0) {
-            sum -= b;
-            if (sum == 0) {
+        Integer counter = 0, sum = 0;
+        while(sum < a) {
+            sum = Add(sum, b);
+            if (sum == a) {
                 counter++;
                 break;
             }
-            if (sum < 0) {
+            if (sum > a) {
                 break;
             }
             counter++;
         }
+
+        // while (sum > 0) {
+        //     sum -= b;
+        //     if (sum == 0) {
+        //         counter++;
+        //         break;
+        //     }
+        //     if (sum < 0) {
+        //         break;
+        //     }
+        //     counter++;
+        // }
         System.debug(counter);
         return counter;
     }
